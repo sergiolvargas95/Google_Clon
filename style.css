@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+header{
+    width: 100%;        /*tamaño del contenedor header*/
+    height: 6rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav-container{         /*En este caso flex lleva todo el contenedor de nav hacia la derecha*/
+    display:flex;
+    justify-content:flex-end;
+}
+
+.nav-right__section{
+    list-style-type: none;
+    width: 15rem;           /*tamaño del contenedor ul*/
+    height: inherit;           /*con inherit el ul va a tomar el tamaño que tenga el header, ya que nunca puede ser mayor*/
+    display: flex;          /*En este caso luego de estar los elementos a la derecha se vuelve a usar flex para centrarlos ya estando en la esquina*/
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0.5rem;
+    color:#000000;
+}
+
+.nav-right__section .menu-icon{
+    background-image: url('https://static.thenounproject.com/png/756729-200.png');
+    background-repeat: no-repeat;   /*esto hará que la imagen no se repita si es muy pequeña*/
+    background-position: center;    /*coloca la imagen en el centro del contenido*/
+    background-size: contain;       /*coloca la imagen del mismo tamaño del contenido*/
+    width: 25px;                    /*aquí le damos un tamaño al contenido*/
+    height: 25px;
+}
+
+.nav-right__section img{
+    border-radius: 50%;       /*con esto conseguimos que nuestra foto de perfil quede como un circulo*/
+    margin-left: 0.1rem;
+}
+
+main{
+    margin-top:15rem;        /*con este margin separamos nuestro main del header*/
+    text-align: center;      /*centramos todo lo que se encuentra dentro del main*/
+}
+
+main .main-logo{
+    width: 53rem;
+    margin: 0 auto;         /* */
+    margin-bottom: 3.5rem;
+}
+
+main .main-logo img{
+    width: 20rem;
+}
+
+main .main-input{
+    width: 53rem;
+    margin: 0 auto;
+    margin-bottom:3.5rem;
+}
+
+main .main-input__container{          /*En esta sección comenzamos a darle estilos al contenedor div*/
+    width:52rem;
+    border-radius: 10rem;
+    border: 1px solid #dfe1e5;
+    display: flex;                  /*usamos flex porque tenemos 3 elementos dentro de nuestro div y queremos que queden uno al lado del otro*/
+    justify-content: center;
+    align-items: center;
+}
+
+main .main-input input{             /*aqui comenzamos a darle estilos a nuestra etiqueta input*/
+    width:45rem;                    /*le damos un tamaño un poco menor de su etiqueta contenedora div*/
+    height: 4rem;
+    border: none;
+    outline: none;                  /*quitamos el borde que se genera cuando le damos clic al input*/
+}
+
+main .main-input__container:hover{
+    box-shadow: 0 1px 6px 0 #20212447;
+    border-color: #dfe1e500;
+}
+
+main .main-input .search-icon{
+    background-image: url('https://img.icons8.com/android/24/000000/search.png');
+    background-repeat: no-repeat;              /*esto quiere decir que no importa el tamaño del icono y el tamaño del contenedor, la imagen no se va a repetir*/
+    background-position: center;
+    background-size: contain;
+    width: 1.8rem;                              /*IMPORTANTE: para que se puedan ver tenemos que darles estas posiciones para que se rendericen*/
+    height: 1.8rem;
+}
+
+main .main-input .micro-icon{
+    background-image: url('https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png');
+    background-repeat: no-repeat;              /*esto quiere decir que no importa el tamaño del icono y el tamaño del contenedor, la imagen no se va a repetir*/
+    background-position: center;
+    background-size: contain;
+    width: 1.8rem;                              /*IMPORTANTE: para que se puedan ver tenemos que darles estas posiciones para que se rendericen*/
+    height: 1.8rem;
+    cursor:pointer;                              /*con esta propiedad hacemos que se ponga la manito en nuestro cursor*/
+}
+
+main .main-buttons{
+    width:53rem;
+    margin: 0 auto;
+}
+
+main .main-buttons div{
+    display: inline-block;
+}
+
+main .main-buttons button{
+    height: 3.6rem;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    font-size: 1.4rem;
+    color: #5f6368;
+    border-radius: 5px;
+    padding: 0 1.5rem;
+    margin-right: 1.7rem;
+}
+
+main .main-buttons button:hover{
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+    color: #222;
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    cursor:pointer
+}
+
+footer{
+    width: 100%;
+    height: 5rem;
+    position: absolute;  /*le damos una posicion fija*/
+    bottom: 0;           /*llevamos el footer hasta abajo y con esto nos aseguramos de que siempre esté en la parte inferior de nuestra página*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;    /*con esto podemos dividir por columnas nuestras secciones*/
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: #f2f2f2;
+    border-top: 1px solid #dadce0
+}
+
+footer ul{
+    list-style-type: none;
+    margin: 1px;
+    display: flex;
+    padding-left: 0;
+}
+
+footer .footer-left{
+    justify-self: left;
+
+}
+
+footer .footer-right{
+    justify-self: right;
+}
+
+footer ul li a{
+    margin:1rem;
+    color: #5f6368;
+}
